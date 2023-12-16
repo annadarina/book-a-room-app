@@ -28,16 +28,23 @@ const RoomCard = ({ room }: RoomCardProps) => {
           alt={room.name}
           title={room.name}
           className="absolute h-full w-full object-cover rounded-[1rem]"
+          data-testid="card-image"
         />
       </div>
 
       <div className="flex flex-col sm:flex-row items-start justify-start sm:justify-between">
         <div className="pb-2 sm:pr-1 sm:pb-0">
-          <h2 className="text-[1.1rem] font-bold">{room.name}</h2>
+          <h2 className="text-[1.1rem] font-bold" data-testid="card-title">
+            {room.name}
+          </h2>
           <p className="text-primary text-[1.1rem]">{spotsMessage}</p>
         </div>
 
-        <Button disabled={count === 0} onClick={handleClick}>
+        <Button
+          disabled={count === 0}
+          onClick={handleClick}
+          data-testid="card-button"
+        >
           Book!
         </Button>
       </div>

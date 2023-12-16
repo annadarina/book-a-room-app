@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{html,js,ts,tsx}'],
+  hoverOnlyWhenSupported: true,
   theme: {
     fontFamily: {
       sans: ['Helvetica', 'Arial', 'sans-serif'],
