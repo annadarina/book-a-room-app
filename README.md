@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# "Book a room" application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Challenge](#challenge)
+- [Requirements](#requirements)
+- [Project Setup](#project-setup)
+- [Implementation](#implementation)
+- [Future Enhancements](#future-enhancements)
 
-## Available Scripts
+### Challenge
 
-In the project directory, you can run:
+Based on the provided design mockups, build a client-side application that shows how many available seats there are
+for each of the meeting rooms in our office.
+
+### Requirements
+
+- As a user I want to be able to visit http://localhost:3000/rooms in my browser, and see all the rooms from the
+  provided mock API.
+
+- As a user I want to see how many remaining spots are available for each room. We’ll leave it up to you what the user
+  should see after they click on the “Book!” button.
+
+- The site should be fully responsive.
+
+- Use a SPA framework such as React or VueJS, or a server-side framework such as NextJS.
+
+### Project Setup
+
+Install dependencies
+
+### `npm install`
+
+Run the project
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode.
+Open [http://localhost:3000/rooms](http://localhost:3000/rooms) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Build the project
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Launch the test runner in the interactive watch mode
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm test`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Implementation
 
-### `npm run eject`
+**Base Setup**: React + TypeScript
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Tailwind CSS**: I chose to use Tailwind CSS because of its utility-first approach, which allows for quick development
+and straightforward style maintenance. This decision is in line with the project's time constraints, as Tailwind CSS
+offers a set of powerful tools that facilitate efficient development.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Data Fetching**: With the limited time available, I went for the Fetch API because it has a user-friendly setup and
+works well across different platforms. This way, I avoided bringing in extra dependencies.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Tests**: Shared components within the application are tested using React Testing Library.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Future Enhancements
 
-## Learn More
+Considering the tight schedule for implementation, I wasn't able to include some features. Here are areas where I could
+make things even better:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Design a separate Home page instead of duplicating pages for `/` and `/rooms` paths.
+2. Consider implementing a more user-friendly approach for the loading state: replace loader with skeletons for the room
+   cards.
+3. Extend the functionality of some shared components (`Button`, `Placeholder`, etc.) and make them more generic.
+4. Replace dummy action when clicking on the "Book!" button with real logic (API support needed).
+5. Introduce a proper notification system for a better user experience (e.g. notify the user when something goes wrong
+   during booking).
+6. Optimize images by rendering different resolutions for various screen sizes to improve performance, page load and
+   user experience.
+7. Improve accessibility to ensure the application is usable for every user.
+8. Implement a theming system to allow for easy customization and consistency in the application's appearance.
+9. Improve page styling and polish styles for the page elements.
+10. Increase test coverage and introduce end-to-end (E2E) testing to ensure that the entire page works correctly from
+    the user's perspective.
