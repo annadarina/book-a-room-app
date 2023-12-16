@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Room } from '../../types';
 import Image from '../Image';
 import Button from '../Button';
+import toast from 'react-hot-toast';
 
 interface RoomCardProps {
   room: Room;
@@ -12,10 +13,11 @@ const RoomCard = ({ room }: RoomCardProps) => {
 
   const spotsMessage = `${count} ${count === 1 ? 'spot' : 'spots'} remaining`;
 
-  // For demo purpose only!
+  // For demo purposes only!
   // Simulate action of booking a room
   const handleClick = () => {
     setCount((prev) => prev - 1);
+    toast.success(`🥳 You successfully booked ${room.name} room`);
   };
 
   return (
